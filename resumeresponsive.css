@@ -272,3 +272,15 @@
     }
 }
 
+
+figure img{
+    max-height: 350px;
+    margin-right: 20px;
+    border-radius: 8px;
+}
+
+section img{
+    max-height: 350px;
+    margin-right: 20px;
+    border-radius: 8px;
+}
