@@ -270,8 +270,58 @@
         font-size: 18px;
         padding: 5px;
     }
+
+    .menu-toggle {
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      background: #111;
+      color: white;
+      font-size: 2rem;
+      border: none;
+      padding: 14px 0;
+      z-index: 300;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    body nav {
+      display: none;
+    }
+
+    body.nav-open nav {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 49px;
+      left: 0;
+      width: 100vw;
+      background: #222;
+      z-index: 250;
+      height: auto;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+    }
+    body.nav-open nav button {
+      width: 100vw;
+      padding: 16px 0;
+      font-size: 1.1rem;
+      border: none;
+      border-bottom: 1px solid #333;
+    }
+    body.nav-open nav button:last-child {
+      border-bottom: none;
+    }
 }
 
+/* Hide menu toggle on desktop */
+@media (min-width: 413px) {
+  
+  .menu-toggle {
+    display: none !important;
+  }
+}
 
 figure img{
     max-height: 350px;
