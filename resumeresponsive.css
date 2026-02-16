@@ -1,6 +1,6 @@
 @media (max-width: 1920px) {
     body{
-        margin-top: 20vh;
+        margin-top: 25vh;
         margin-left: 20%;
         padding: 0;
         font-family: San Francisco, sans-serif;
@@ -185,36 +185,33 @@
         text-align: center;
         font-size: 0.9rem;
     }
+    
+    figure img{
+        max-height: 350px;
+        margin-right: 20px;
+        border-radius: 8px;
+    }
+
+    section img{
+        max-height: 350px;
+        margin-right: 20px;
+        border-radius: 8px;
+    }
 }
+
 
 @media (max-width: 412px) {
     body {
-        margin-top: 80px;
+        margin-top: 90px;
         margin-left: 0;
         padding: 0 5px;
         width: 100vw;
     }
-    body nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: auto;
-        display: flex;
-        flex-direction: row;
-        z-index: 200;
-        background-color: black;
-    }
-    body nav button {
-        width: 33vw;
-        padding: 10px 0;
-        font-size: 16px;
-        border-right: 1px solid #444;
-        border-bottom: none;
-    }
+    
     body nav button:last-child {
         border-right: none;
     }
+    
     header {
         position: relative;
         left: 0;
@@ -223,6 +220,7 @@
         padding: 10px 0;
         font-size: medium;
     }
+    
     .header-content {
         flex-direction: column;
         align-items: flex-start;
@@ -230,17 +228,20 @@
         text-align: left;
         gap: 5px;
     }
+    
     .cover-photo {
         max-width: 100vw;
         max-height: 80px;
         margin: 0 0 8px 0;
         align-self: center;
     }
+    
     h1 {
         margin: 0;
         font-size: 1.4rem;
         text-align: left;
     }
+    
     #container {
         flex-direction: column;
         width: 100vw;
@@ -249,21 +250,25 @@
         gap: 10px;
         box-sizing: border-box;
     }
+    
     article {
         flex: 1 1 100%;
         margin: 5px 0;
         padding: 0 5px;
         font-size: 13px;
     }
+    
     h2 {
         font-size: 1.1rem;
     }
+    
     footer {
         width: 98vw;
         margin-left: 0;
         padding: 10px 0;
         font-size: 0.85rem;
     }
+    
     p#thanks {
         width: 90vw;
         min-height: 40px;
@@ -271,66 +276,82 @@
         padding: 5px;
     }
 
-    .menu-toggle {
-      display: block;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      background: #111;
-      color: white;
-      font-size: 2rem;
-      border: none;
-      padding: 14px 0;
-      z-index: 300;
-      text-align: center;
-      cursor: pointer;
-    }
-
-    body nav {
+    /* Hides nav sidebar */
+    nav {
       display: none;
     }
 
-    body.nav-open nav {
+    /* New drop down menu */
+    .mobile-menu {
+      display: block;
+      width: 100vw;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 400;
+      background: #222;
+    }
+
+    .mobile-menu[open] nav {
       display: flex;
       flex-direction: column;
-      position: fixed;
-      top: 49px;
-      left: 0;
-      width: 100vw;
-      background: #222;
-      z-index: 250;
-      height: auto;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.2);
     }
-    body.nav-open nav button {
+
+    .mobile-menu nav {
+      display: none;
+      background: #222;
+      width: 100vw;
+    }
+
+    .mobile-menu summary {
+      display: block;
+      color: white;
+      background: #111;
+      font-size: 2rem;
+      padding: 16px 0;
+      cursor: pointer;
+      text-align: center;
+      border: none;
+      outline: none;
+      user-select: none;
+    }
+
+    .mobile-menu[open] summary {
+      background: #222;
+    }
+
+    .mobile-menu nav button {
       width: 100vw;
       padding: 16px 0;
       font-size: 1.1rem;
       border: none;
       border-bottom: 1px solid #333;
+      background: none;
+      color: white;
     }
-    body.nav-open nav button:last-child {
+
+    .mobile-menu nav button:last-child {
       border-bottom: none;
     }
+    
+    figure img{
+        max-height: 160px;
+        margin-right: 20px;
+        border-radius: 8px;
+    }
+
+    section img{
+        max-height: 160px;
+        margin-left: 20px;
+        margin-right: 20px;
+        border-radius: 8px;
+    }
 }
 
-/* Hide menu toggle on desktop */
+
+/* Hides mobile menu on desktop */
 @media (min-width: 413px) {
   
-  .menu-toggle {
+  .mobile-menu {
     display: none !important;
   }
-}
-
-figure img{
-    max-height: 350px;
-    margin-right: 20px;
-    border-radius: 8px;
-}
-
-section img{
-    max-height: 350px;
-    margin-right: 20px;
-    border-radius: 8px;
-}
